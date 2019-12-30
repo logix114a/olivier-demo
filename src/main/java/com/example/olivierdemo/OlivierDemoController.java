@@ -12,6 +12,14 @@ public class OlivierDemoController {
 	public ModelAndView home() {
 		return new ModelAndView("home");
 	}
+	@GetMapping("home")
+	public ModelAndView home1() {
+		return new ModelAndView("home");
+	}	
+	@GetMapping("home-top")
+	public ModelAndView hometop() {
+		return new ModelAndView("home-top");
+	}
 	
 	@RequestMapping("foo")
 	public String foo() {
