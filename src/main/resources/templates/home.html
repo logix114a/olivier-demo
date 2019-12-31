@@ -1,7 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <html xmlns:th="http://www.thymeleaf.org">
+
  <head>
 	<title>Koadeg</title>
-<link rel="stylesheet" type="text/css" href="/css/main-left.css"  th:href="@{/css/main.css}">
+<link rel="stylesheet" type="text/css" href="/css/main-left.css"  th:href="@{/css/main-left.css}">
 <script type="text/javascript" src="/js/rAF.js"></script>
 	<script type="text/javascript" src="/js/ResizeSensor.js"></script>
 	<script type="text/javascript" src="/js/sticky-sidebar.js"></script>
@@ -49,10 +51,10 @@ img {vertical-align: middle;}
 /* Caption text */
 .text {
   color: #f2f2f2;
-  font-size: 15px;
+  font-size: 20px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 85px;
   width: 100%;
   text-align: center;
 }
@@ -108,7 +110,7 @@ img {vertical-align: middle;}
 </head>
 <body>
 	<header>
-		<div class="container">
+		<div class="container-header">
 			<h1>Koadeg</h1>
 		</div>
 	</header>
@@ -135,8 +137,9 @@ img {vertical-align: middle;}
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="pictures/img_nature_wide.jpg" style="width:100%">
-    <div class="text">Caption Two</div>
+    <a th:href="@{home-top}"><img src="pictures/img_nature_wide.jpg" style="width:100%">    
+    </a>
+    <div class="text"><a th:href="@{home-top}">Créer votre Forêt</a></div>
   </div>
 
   <div class="mySlides fade">
