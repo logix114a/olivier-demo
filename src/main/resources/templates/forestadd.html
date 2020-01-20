@@ -19,10 +19,19 @@
 				<div th:replace="menu-left :: navbar"></div>
 			</div>
 		</div>
-		<div id="content">
-		<a th:href='${forest.id}'
-						th:text="${forest.name}">test</a>
-			<p>Forest.</p>
+		<div id="content">		 
+			<p> My Forest.</p>
+			<form id="parcellecadastraleForm"  th:object="${forest}"
+				th:action="@{/forestadd}" method="post" action="#">
+
+				
+				 <label	for="fordsqdsqest">Nouvelle Forêt</label> <input type="text" th:field="*{name}"	 /> 
+					
+				<div class="form-actions">
+					<input type="submit" value="Save" />
+				</div>
+			</form>
+			
 		</div>
 	</div>
 	<footer>
@@ -30,3 +39,5 @@
 	</footer>
 </body>
 </html>
+
+

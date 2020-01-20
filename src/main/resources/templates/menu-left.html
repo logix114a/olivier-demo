@@ -11,10 +11,11 @@
 			<div th:fragment="navbar" class="navbar">
 				<div class="navbar-inner">					
 					<ul class="nav">
-						<li><a th:href="@{home}" th:text="#{menu.home}"> </a></li>
-						<li><a th:href="@{home-top}"  th:text="#{menu.home-top}">Menu top</a></li>
-						<li><a th:href="@{registration}"  th:text="#{menu.registration}">Créer un compte</a></li>
-						<li><a th:href="@{login}"  th:text="#{menu.login}">Se connecter</a></li>
+						<li><a th:href="@{/home}" th:text="#{menu.home}"> </a></li>
+						<li><a th:href="@{/myforest}">MyForest</a></li>
+						<li><a th:href="@{/home-top}"  th:text="#{menu.home-top}">Menu top</a></li>
+						<li><a th:href="@{/registration}"  th:text="#{menu.registration}">Créer un compte</a></li>
+						<li><a th:href="@{/login}"  th:text="#{menu.login}">Se connecter</a></li>
 					 
 					</ul>
 				</div>
