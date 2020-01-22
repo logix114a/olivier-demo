@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "forest", url = "localhost:9104")
 public interface OlivierDemoProxy {
+	/*
+	 * 
+	 * OBJECT FOREST
+	 * 
+	 */
 	@GetMapping(value = "/forestlist")
 	List<Forest> forestlist();
 	
@@ -19,6 +24,116 @@ public interface OlivierDemoProxy {
 	 
 	 @GetMapping(value = "/forestview/{id}")
 		Forest forestview(@PathVariable("id") int id);
-		
 	 
+	 
+	 /*
+		 * 
+		 * OBJECT PARCELLE FORESTIERE
+		 * 
+		 */
+		@GetMapping(value = "/parcelleforestierelist")
+		List<ParcelleForestiere> parcelleforestierelist();
+		
+		 @PostMapping("/parcelleforestiereadd")
+		 ParcelleForestiere createparcelleforestiere(@RequestBody ParcelleForestiere parcelleforestiere);	 
+		 
+		 @GetMapping(value = "/parcelleforestiereview/{id}")
+		 ParcelleForestiere parcelleforestiereview(@PathVariable("id") int id);
+		 
+		 
+		 
+		 /*
+			 * 
+			 * OBJECT PARCELLE CADASTRALE
+			 * 
+			 */
+			@GetMapping(value = "/parcellecadastralelist")
+			List<ParcelleCadastrale> parcellecadastralelist();
+			
+			 @PostMapping("/parcellecadastraleadd")
+			 ParcelleCadastrale createparcellecadastrale(@RequestBody ParcelleCadastrale parcellecadastrale);	 
+			 
+			 @GetMapping(value = "/parcellecadastraleview/{id}")
+			 ParcelleCadastrale parcellecadastraleview(@PathVariable("id") int id);
+			 
+			 
+			 
+			 
+			 /*
+				 * 
+				 * OBJECT  PEUPLEMENT
+				 * 
+				 */
+				@GetMapping(value = "/peuplementlist")
+				List<Peuplement> peuplementlist();
+				
+				 @PostMapping("/peuplementadd")
+				 Peuplement createpeuplement(@RequestBody Peuplement peuplement);	 
+				 
+				 @GetMapping(value = "/peuplementview/{id}")
+				 Peuplement peuplementview(@PathVariable("id") int id);
+				 
+				 
+				 
+				 /*
+					 * 
+					 * OBJECT TYPE PEUPLEMENT
+					 * 
+					 */
+					@GetMapping(value = "/typepeuplementlist")
+					List<TypePeuplement> typepeuplementlist();
+					
+					 @PostMapping("/typepeuplementadd")
+					 TypePeuplement createtypepeuplement(@RequestBody TypePeuplement typepeuplement);	 
+					 
+					 @GetMapping(value = "/typepeuplementview/{id}")
+					 TypePeuplement typepeuplementview(@PathVariable("id") int id);
+		
+					 
+					 /*
+						 * 
+						 * OBJECT STATION FORESTIERE
+						 * 
+						 */
+						@GetMapping(value = "/stationforestierelist")
+						List<StationForestiere> stationforestierelist();
+						
+						 @PostMapping("/stationforestiereadd")
+						 StationForestiere createstationforestiere(@RequestBody StationForestiere stationforestiere);	 
+						 
+						 @GetMapping(value = "/stationforestiereview/{id}")
+						 StationForestiere stationforestiereview(@PathVariable("id") int id);
+						 
+						 
+						 
+						 /*
+							 * 
+							 * OBJECT ESSENCE
+							 * 
+							 */
+							@GetMapping(value = "/essencelist")
+							List<Essence> essencelist();
+							
+							 @PostMapping("/essenceadd")
+							    Essence createessence(@RequestBody Forest essence);	 
+							 
+							 @GetMapping(value = "/essenceview/{id}")
+							 Essence essenceview(@PathVariable("id") int id);
+							 
+							 
+							 
+							 
+							 /*
+								 * 
+								 * OBJECT TYPE TRAVAUX
+								 * 
+								 */
+								@GetMapping(value = "/typetravauxlist")
+								List<TypeTravaux> typetravauxlist();
+								
+								 @PostMapping("/typetravauxadd")
+								 TypeTravaux createtypetravaux(@RequestBody TypeTravaux typetravaux);	 
+								 
+								 @GetMapping(value = "/typetravauxview/{id}")
+								 TypeTravaux typetravauxview(@PathVariable("id") int id);
 }
