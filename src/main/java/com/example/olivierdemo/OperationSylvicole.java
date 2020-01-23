@@ -9,12 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity
+
 public class OperationSylvicole {
-	 @Id
-	    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "operation_sylvicole")
-	    @SequenceGenerator(name="operation_sylvicole", sequenceName = "op_sylvi", allocationSize=50)
-	    @Column(name = "id", updatable = false, nullable = false)
+
 		private Long id;
 		private String nom;
 		private String Created_source;

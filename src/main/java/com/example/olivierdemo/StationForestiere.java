@@ -9,19 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity
+
 public class StationForestiere {
-    @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "station_forestiere")
-    @SequenceGenerator(name="station_forestiere", sequenceName = "sta_for", allocationSize=50)
-    @Column(name = "id", updatable = false, nullable = false)
+
 	private Long id;
 	private String nom;
-	@Column(length = 3000) 
+
 	private String description;
-	@Column(length = 3000) 
+
 	private String caracteristique_sol;
-	@Column(length = 3000) 
+
 	private String peuplement_naturel;
 	private String Created_source;
 	private Date Created_dttm;

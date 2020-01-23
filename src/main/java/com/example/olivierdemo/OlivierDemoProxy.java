@@ -56,7 +56,8 @@ public interface OlivierDemoProxy {
 			 @GetMapping(value = "/parcellecadastraleview/{id}")
 			 ParcelleCadastrale parcellecadastraleview(@PathVariable("id") int id);
 			 
-			 
+			 @GetMapping(value = "/parcellecadastralegetpeuplement/{id}")
+			 List<Peuplement> parcellecadastralegetpeuplement(@PathVariable("id") int id);
 			 
 			 
 			 /*
@@ -115,12 +116,24 @@ public interface OlivierDemoProxy {
 							List<Essence> essencelist();
 							
 							 @PostMapping("/essenceadd")
-							    Essence createessence(@RequestBody Forest essence);	 
+							    Essence createessence(@RequestBody Essence essence);	 
 							 
 							 @GetMapping(value = "/essenceview/{id}")
 							 Essence essenceview(@PathVariable("id") int id);
 							 
-							 
+							 /*
+								 * 
+								 * OBJECT OPERATIOn SYLVICOLE
+								 * 
+								 */
+								@GetMapping(value = "/operationsylvicolelist")
+								List<OperationSylvicole> operationsylvicolelist();
+								
+								 @PostMapping("/operationsylvicoleadd")
+								 OperationSylvicole createoperationsylvicole(@RequestBody OperationSylvicole operationsylvicole);	 
+								 
+								 @GetMapping(value = "/operationsylvicoleview/{id}")
+								 OperationSylvicole operationsylvicoleview(@PathVariable("id") int id);
 							 
 							 
 							 /*

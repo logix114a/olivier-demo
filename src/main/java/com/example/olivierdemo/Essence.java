@@ -12,13 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 
-
-@Entity
 public class Essence {
-    @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "essence")
-    @SequenceGenerator(name="essence", sequenceName = "esse", allocationSize=50)
-    @Column(name = "id", updatable = false, nullable = false)
+
 	private Long id;
 	private String nom;
 	private String Created_source;

@@ -1,0 +1,114 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="#{header.title}"></title>
+<link rel="stylesheet" type="text/css" href="/css/main-left.css"
+	th:href="@{/css/main-left.css}">
+</head>
+<body>
+	<header>
+		<div class="container-header">
+			<h1 th:text="#{header.title}"></h1>
+
+		</div>
+	</header>
+	<div class="container clearfix">
+		<div id="sidebar">
+			<div class="sidebar__inner">
+				<div th:replace="menu-left :: navbar"></div>
+			</div>
+		</div>
+		<div id="content">
+		<center><h1><a th:href ='@{/parcelleforestiereview/} + ${parcelleforestiere.id}' th:text="${parcelleforestiere.description}">test</a></h1></center>
+					
+					<a th:href ='@{/parcelleforestieremodify/} + ${parcelleforestiere.id}' ><img th:src="@{/pictures/modify.png}"/ width='100px'></a> | <a th:href ='@{/forest/parforassignparcad/} + ${parcelleforestiere.id}' >Assigner Parcelle Cadastrale</a> | <a th:href ='@{/forest/parforassignstafor/} + ${parcelleforestiere.id}' >Assigner Station Forestière</a>
+		<br />
+		Informations
+		
+			<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+						<td> Numéro</td>
+						<td>Description</td>
+						<td>Pente</td>	
+						<td>Exposition</td>	
+						<td>Position</td>	
+						<td>Roche</td>	
+						<td>Texture</td>	
+						<td>Profondeur</td>					
+						</tr>
+					</thead>
+					<tbody>	
+					<tr>
+					<td th:text="${parcelleforestiere.numero}"></td>
+					<td th:text="${parcelleforestiere.description}">1</td>
+					<td th:text="${parcelleforestiere.pente}">1</td>
+					<td th:text="${parcelleforestiere.exposition}">1</td>
+					<td th:text="${parcelleforestiere.position}">1</td>
+					<td th:text="${parcelleforestiere.roche}">1</td>
+					<td th:text="${parcelleforestiere.texture}">1</td>
+					<td th:text="${parcelleforestiere.profondeur}">1</td>
+					</tr>
+					</tbody></table>
+					<br />
+					Liste des stations forestières
+					<table class="table table-bordered table-striped">
+					<thead><tr>
+					<td>ID</td>
+					<td>Station forestière</td>
+					<td>Modifier</td>
+					</tr>
+					</thead>
+					<tbody th:each="stationforestiere : ${parcelleforestiere.stationforestieres}">	
+					<tr>
+					<td><a th:href ='@{/stationforestiereview/} + ${stationforestiere.id}' th:text="${stationforestiere.id}">ssq</a></td>
+					<td><a th:href ='@{/stationforestiereview/} + ${stationforestiere.id}' th:text="${stationforestiere.nom}">ssq</a></td>
+					<td><a th:href ='@{/stationforestieremodify/} + ${stationforestiere.id}'>Modifier</a></td>
+					</tr>
+					</tbody>
+					</table>
+		<br />
+		Liste des parcelles cadastrales
+			<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<td>ID</td>
+							<td>Commune</td>
+							<td>Section</td>
+							<td>Numero de Parcelle</td>
+							<td>lieu-dit</td>
+							<td>surface</td>
+							<td>Modifier</td>
+							
+						</tr>
+					</thead>
+					<tbody>						
+						<tr th:each="parcellecadastrale : ${parcelleforestiere.parcellecadastrales}">
+							<td th:text="${parcellecadastrale.id}">1</td>
+							
+							<td><a href="view.html" th:href="@{'/parcellecadastraleview/' + ${parcellecadastrale.id}}"
+								th:text="${parcellecadastrale.commune}"> The summary </a></td>
+								<td><a href="view.html" th:href="@{'/parcellecadastraleview/' + ${parcellecadastrale.id}}"
+								th:text="${parcellecadastrale.section}"> The summary </a></td>
+								<td><a href="view.html" th:href="@{'/parcellecadastraleview/' + ${parcellecadastrale.id}}"
+								th:text="${parcellecadastrale.numeroparcelle}"> The summary </a></td>
+								<td><a href="view.html" th:href="@{'/parcellecadastraleview/' + ${parcellecadastrale.id}}"
+								th:text="${parcellecadastrale.lieu_dit}"> The summary </a></td>
+								<td><a href="view.html" th:href="@{'/parcellecadastraleview/' + ${parcellecadastrale.id}}"
+								th:text="${parcellecadastrale.surface}"> The summary </a></td>
+								<td><a href="view.html" th:href="@{'/parcellecadastralemodify/' + ${parcellecadastrale.id}}"
+								> Modifier</a></td>
+						</tr>
+					</tbody>
+				</table>	
+	</div>
+	<footer>
+		<p>Very Tall Footer</p>
+	</footer>
+</body>
+</html>
+
+
+
+

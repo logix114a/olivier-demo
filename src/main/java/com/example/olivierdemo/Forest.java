@@ -15,10 +15,9 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.OrderBy;
 
-@Entity
+
 public class Forest {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    
 	private Long id;
 	private String name;
 	private String proprietaire;
@@ -110,8 +109,7 @@ public class Forest {
 		this.geologie = geologie;
 	}
 	
-	   @OneToMany (cascade={CascadeType.PERSIST})
-	   @OrderBy(clause = "parcelleforestieres_id asc")  
+	   
 	private Set<ParcelleForestiere> parcelleforestieres = new HashSet<ParcelleForestiere>();;
 
 

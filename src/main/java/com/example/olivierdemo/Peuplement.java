@@ -16,19 +16,18 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 
-@Entity
+
 public class Peuplement {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+
 	private Long id;
     private Boolean status;
-    @ManyToOne (cascade={CascadeType.PERSIST}) 
+
 	private Essence essence;
-	@ManyToOne (cascade={CascadeType.PERSIST}) 
+
 	private TypePeuplement typepeuplement;
-    @ManyToOne  
+
     private ParcelleCadastrale parcellecadastrale;
-    @ManyToMany
+
     private Set<Programmation> programmation = new HashSet<Programmation>();
 	private String uniteforestiere;
     private String commentaire;
@@ -175,12 +174,6 @@ public class Peuplement {
 		this.status = status;
 	}
 
-	public TypePeuplement getTypepeuplements() {
-		return typepeuplement;
-	}
-	public void setTypepeuplements(TypePeuplement typepeuplement) {
-		this.typepeuplement = typepeuplement;
-	}
 
 	public String getUniteforestiere() {
 		return uniteforestiere;

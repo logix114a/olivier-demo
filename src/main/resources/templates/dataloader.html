@@ -1,16 +1,28 @@
-<html xmlns:th="http://www.thymeleaf.org">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<head th:replace="menu :: head(title=~{::title/text()})">
-		<title>Messages : Create</title>
-	</head>
-<body>
-<div class="container">
-<div th:replace="menu :: navbar"></div>
-	<div th:replace="forest/menuforest :: navbar"></div>
-<H1>DataLoader</H1> <br />
+<html xmlns:th="http://www.thymeleaf.org">
 
-	<div>
-		<form method="POST" enctype="multipart/form-data" th:action="@{/forest/dataloader}" action="/">
+<head>
+<title th:text="#{header.title}"></title>
+<link rel="stylesheet" type="text/css" href="/css/main-left.css"
+	th:href="@{/css/main-left.css}">
+</head>
+<body>
+	<header>
+		<div class="container-header">
+			<h1 th:text="#{header.title}"></h1>
+
+		</div>
+	</header>
+	<div class="container clearfix">
+		<div id="sidebar">
+			<div class="sidebar__inner">
+				<div th:replace="menu-left :: navbar"></div>
+			</div>
+		</div>
+		<div id="content">
+			<p> My Forest.</p>
+			<div>
+		<form method="POST" enctype="multipart/form-data" th:action="@{/dataloader}" action="/">
 			<table>
 				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
 				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
@@ -25,6 +37,10 @@
 			</li>
 		</ul>
 	</div>
-</div>
+		</div>
+	</div>
+	<footer>
+		<p>Very Tall Footer</p>
+	</footer>
 </body>
 </html>

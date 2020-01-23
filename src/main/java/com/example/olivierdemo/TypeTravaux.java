@@ -10,12 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity
+
 public class TypeTravaux {
-	 @Id
-	    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "type_travaux")
-	    @SequenceGenerator(name="type_travaux", sequenceName = "type_trav", allocationSize=50)
-	    @Column(name = "id", updatable = false, nullable = false)
+
 		private Long id;
 		private String nom;
 		private String Created_source;

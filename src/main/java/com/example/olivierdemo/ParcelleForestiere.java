@@ -16,12 +16,9 @@ import javax.persistence.SequenceGenerator;
 
 import org.hibernate.annotations.OrderBy;
 
-@Entity
+
 public class ParcelleForestiere {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "parcelle_forestiere")
-	@SequenceGenerator(name = "parcelle_forestiere", sequenceName = "par_for", allocationSize = 50)
-	@Column(name = "id", updatable = false, nullable = false)
+
 	private Long id;
 	private String numero;
 	private String description;
@@ -36,11 +33,10 @@ public class ParcelleForestiere {
     private Date Last_updated_dttm;
     private String Last_updated_source;
 
-	@OneToMany(cascade = { CascadeType.PERSIST })
-	@OrderBy(clause = "parcellecadastrales_id asc")  
+ 
 	private Set<ParcelleCadastrale> parcellecadastrales = new HashSet<ParcelleCadastrale>();
 
-	@ManyToMany(cascade = { CascadeType.PERSIST })
+
 	private Set<StationForestiere> stationforestieres = new HashSet<StationForestiere>();
 
 	public String getDescription() {

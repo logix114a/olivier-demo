@@ -23,7 +23,90 @@
 		<a th:href='${forest.id}'
 						th:text="${forest.name}">test</a>
 			<p>Forest.</p>
+			<a href="view.html"
+						th:href="@{'/forestmodify/' + ${forest.id}}"><img
+							th:src="@{/pictures/modify.png}" / width='100px'></a>
+			<div class="pull-left">
+				<br /> Informations sur la forêt <br />
+				<table class="table table-bordered table-striped">
+					<tr>
+						<td>Propriétaire</td>
+						<td th:text="${forest.proprietaire}">1</td>
+					</tr>
+					<tr>
+						<td>Situation Géographique</td>
+						<td th:text="${forest.situation_geographique}">1</td>
+					</tr>
+					<tr>
+						<td>Zonage Réglementaire</td>
+						<td th:text="${forest.zonage_reglementaire}">1</td>
+					</tr>
+					<tr>
+						<td>Droit usage</td>
+						<td th:text="${forest.droit_usage}">1</td>
+					</tr>
+					<tr>
+						<td>Région Forestière</td>
+						<td th:text="${forest.region_forestiere}">1</td>
+					</tr>
+					</tr>
+					<tr>
+						<td>Relief</td>
+						<td th:text="${forest.relief}">1</td>
+					</tr>
+					</tr>
+					<tr>
+						<td>Climat</td>
+						<td th:text="${forest.climat}">1</td>
+					</tr>
+					</tr>
+					<tr>
+						<td>Température</td>
+						<td th:text="${forest.temperature}">1</td>
+					</tr>
+					</tr>
+					<tr>
+						<td>Géologie</td>
+						<td th:text="${forest.geologie}">1</td>
+					</tr>
+				</table>
+				<br /> Liste des parcelles associées à la forêt <br />
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<td colspan='2'>Parcelle Forestieres</td>
+							<td colspan='3'>Parcelle Cadastrales</td>
+						</tr>
+						<tr>
+							<td>ID</td>
+							<td>Name</td>
+							<td>Parcelle</td>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="parcelleforestiere : ${forest.parcelleforestieres}">
+							<td th:text="${parcelleforestiere.id}">1</td>
+
+							<td><a href="view.html"
+								th:href="@{'/parcelleforestiereview/' + ${parcelleforestiere.id}}"
+								th:text="${parcelleforestiere.description}"> The summary </a></td>
+							<td>
+								<table>
+									<tr
+										th:each="parcellecadastrale : ${parcelleforestiere.parcellecadastrales}">
+										<td><a href="view.html"
+											th:href="@{'/parcellecadastraleview/' + ${parcellecadastrale.id}}"
+											th:text="${parcellecadastrale.numeroparcelle}"> The
+												summary </a></td>
+									</tr>
+								</table>
+						</tr>
+					</tbody>
+				</table>
 		</div>
+		
+		
 	</div>
 	<footer>
 		<p>Very Tall Footer</p>

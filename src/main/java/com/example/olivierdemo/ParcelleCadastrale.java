@@ -14,12 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 
-@Entity
+
 public class ParcelleCadastrale {
-    @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "parcelle_cadastrale")
-    @SequenceGenerator(name="parcelle_cadastrale", sequenceName = "par_cad", allocationSize=50)
-    @Column(name = "id", updatable = false, nullable = false)
+
 	private Long id;
 	private String commune;
 	private String section;
@@ -36,16 +33,16 @@ public class ParcelleCadastrale {
 	private Forest forest;
 */
 
-	@OneToMany(mappedBy="parcellecadastrale")
-	private Set<Peuplement> peuplements = new HashSet<Peuplement>();
-;
+
+/*	private Set<Peuplement> peuplements = new HashSet<Peuplement>();
+
 	public Set<Peuplement> getPeuplements() {
 		return peuplements;
 	}
 
 	public void setPeuplements(Set<Peuplement> peuplements) {
 		this.peuplements = peuplements;
-	}
+	}*/
 
 	public Long getId() {
 		return id;
