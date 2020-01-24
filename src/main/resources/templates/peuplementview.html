@@ -1,0 +1,115 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title th:text="#{header.title}"></title>
+<link rel="stylesheet" type="text/css" href="/css/main-left.css"
+	th:href="@{/css/main-left.css}">
+</head>
+<body>
+	<header>
+		<div class="container-header">
+			<h1 th:text="#{header.title}"></h1>
+
+		</div>
+	</header>
+	<div class="container clearfix">
+		<div id="sidebar">
+			<div class="sidebar__inner">
+				<div th:replace="menu-left :: navbar"></div>
+			</div>
+		</div>
+		<div id="content">
+		
+			<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<td>ID</td>
+							<td>Type Peuplement</td>
+							<td>Essence</td>
+							<td>Commentaire</td>
+							<td>Statut</td>
+							<td>Created dttm</td>
+							<td>Created User</td>
+							<td>Last updated dttm</td>
+							<td>Last Updated user</td>						
+						</tr>
+					</thead>
+					<tbody>						
+						<tr>
+							<td th:text="${peuplement.id}">1</td>
+							    <td><a th:href='@{/typepeuplementview/} + ${peuplement.typepeuplement.id}' th:text="${peuplement.typepeuplement.nom}">test</a></td>
+								<td><a th:href='@{/essenceview/} + ${peuplement.essence.id}' th:text="${peuplement.essence.nom}">test</a></td>
+								<td  th:text="${peuplement.commentaire}">ttt</td>
+								<td  th:text="${peuplement.status}">ttt</td>
+							    <td  th:text="${peuplement.created_dttm}">ttt</td>
+							    <td  th:text="${peuplement.created_source}">ttt</td>
+							    <td  th:text="${peuplement.last_updated_dttm}">ttt</td>
+							    <td  th:text="${peuplement.last_updated_source}">ttt</td>
+						</tr>
+					</tbody>
+				</table>	
+				<br />
+				Programmation des coupes
+				<br />
+				<div class="pull-right">
+					<a href="addforest.html" th:href="@{/programmationadd}">Créer une nouvelle Programmation</a>
+				</div>
+					<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<td>ID</td>
+							<td>Type</td>	
+							<td>Année</td>			
+						</tr>
+					</thead>
+					<tbody>						
+						<tr th:each="programmatio : ${peuplement.programmation}" th:if="${programmatio.type} == Coupe">
+							<td th:text="${programmatio.id}">1</td>
+							<td><a th:href='@{/forest/programmationview/} + ${programmatio.id}' th:text="${programmatio.type}">test</a></td>
+							<td th:text="${programmatio.prevision}">1</td>
+						</tr>
+					</tbody>
+				</table>	
+				
+				<br />
+				Programmation des travaux
+				<br />
+					<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<td>ID</td>
+							<td>Type</td>	
+							<td>Année</td>			
+						</tr>
+					</thead>
+					<tbody>						
+						<tr th:each="programmatio : ${peuplement.programmation}" th:if="${programmatio.type} == Travaux">
+							<td th:text="${programmatio.id}">1</td>
+							<td><a th:href='@{/forest/programmationview/} + ${programmatio.id}' th:text="${programmatio.type}">test</a></td>
+							<td th:text="${programmatio.prevision}">1</td>
+						</tr>
+					</tbody>
+				</table>
+		
+		
+	</div>
+	<footer>
+		<p>Very Tall Footer</p>
+	</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

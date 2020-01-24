@@ -76,10 +76,10 @@
 						<td th:text="${peuplement.id}">1</td>
 
 						<td th:text="${peuplement.uniteforestiere}">sqsq</td>
-						<td><a th:href='@{/forest/typepeuplementview/} + ${peuplement.typepeuplement.id}' th:text="${peuplement.typepeuplement.nom}">test</a></td>
-						<td><a th:href='@{/forest/essenceview/} + ${peuplement.essence.id}' th:text="${peuplement.essence.nom}">test</a></td>
+						<td><a th:href='@{/typepeuplementview/} + ${peuplement.typepeuplement.id}' th:text="${peuplement.typepeuplement.nom}">test</a></td>
+						<td><a th:href='@{/essenceview/} + ${peuplement.essence.id}' th:text="${peuplement.essence.nom}">test</a></td>
 						<td th:text="${peuplement.commentaire}">ttt</td>
-						<td><a th:href='@{/forest/peuplementview/} + ${peuplement.id}' th:text="${peuplement.description}"></a></td>
+						<td><a th:href='@{/peuplementview/} + ${peuplement.id}' th:text="${peuplement.description}"></a></td>
 						<td th:text="${peuplement.status}">ttt</td>
 						<td th:text="${peuplement.surface}">ttt</td>
 						<td th:text="${peuplement.created_dttm}">ttt</td>
